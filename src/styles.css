@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body.till-counter {
+  background-color: #4DD0E1;
+  color: rgba(0,0,0,.87);
+}
+
+header, .header {
+  width: 100%;
+  height: 69px;
+  background-color: #0097A7;
+}
+
+.loading {
+  text-align: center;
+  padding-top: 200px;
+  color: rgba(255,255,255,.87);
+}
+
+h1 {
+  text-align: center;
+}

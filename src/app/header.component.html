@@ -1,0 +1,9 @@
+<div class="reset col-sm-2"><i class="fa fa-refresh fa-2x" (click)="resetAmounts()"></i></div>
+<div class="total col-sm-8">
+  <h1>{{total | currency:currentCurrency:true:currencyFormat}}</h1>
+</div>
+<div class="change-currency col-sm-2">
+  <select class="form-control" [(ngModel)]="currentCurrency" #chosenCurrency (change)="setCurrentCurrency(chosenCurrency.value)">
+    <option *ngFor="let code of currencies" value="{{code}}">{{code}}</option>
+  </select>
+</div>

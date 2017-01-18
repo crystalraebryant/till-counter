@@ -1,3 +1,34 @@
-<h1>
-  {{title}}
-</h1>
+<div class="header">
+  <div class="reset col-sm-2"><i class="fa fa-refresh fa-2x" (click)="resetAmounts()"></i></div>
+  <div class="total col-sm-8">
+  <h1>{{total | currency:currentCurrency:true:counter.format}}</h1>
+  </div>
+  <div class="change-currency col-sm-2">
+    <select class="form-control" [(ngModel)]="currentCurrency" #chosenCurrency (change)="setCurrentCurrency(chosenCurrency.value)">
+      <option *ngFor="let code of currencies" value="{{code}}">{{code}}</option>
+    </select>
+  </div>
+</div>
+<div class="bills">
+  <h1>Bills</h1>
+  <div *ngFor="let bill of counter.bills" class="form-horizontal">
+    <div class="form-group">
+      <label for="bill_counter" class="col-sm-4 control-label">{{bill.label}}</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="bill_counter" [(ngModel)]="bill.count" (keyup)="calculateTotal()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="coins">
+  <h1>Coins</h1>
+  <div *ngFor="let coin of counter.coins" class="form-horizontal">
+    <div class="form-group">
+      <label for="coin_counter" class="col-sm-4 control-label">{{coin.label}}</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="coin_counter" [(ngModel)]="coin.count" (keyup)="calculateTotal()">
+      </div>
+    </div>
+  </div>
+</div>

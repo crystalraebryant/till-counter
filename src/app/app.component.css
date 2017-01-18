@@ -1,0 +1,28 @@
+header {
+  float: left;
+  clear: both;
+  text-align: center;
+  color: rgba(255,255,255,.87);
+}
+
+.header select {
+  color: rgba(0,0,0,.87);
+}
+
+.bills, .coins {
+  width: calc(50% - 10px);;
+  float: left;
+  font-size: 20px;
+}
+
+.bills .form-control, .coins .form-control, select {
+  font-size: 20px;
+}
+.bills .form-control, .coins .form-control {
+  text-align: right;
+}
+
+.reset, .change-currency {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
